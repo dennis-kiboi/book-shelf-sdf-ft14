@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.star-filled {
+  fill: #fbbf24;
+  color: #fbbf24;
+}
+
+.star-empty {
+  color: #d1d5db;
+}
