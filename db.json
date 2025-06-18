@@ -1,0 +1,46 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "status": "Read",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "status": "Read",
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "title": "1984",
+      "author": "George Orwell",
+      "status": "To Read",
+      "rating": 0
+    },
+    {
+      "id": 4,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "status": "Read",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "status": "To Read",
+      "rating": 0
+    },
+    {
+      "id": 6,
+      "title": "Lord of the Flies",
+      "author": "William Golding",
+      "status": "Read",
+      "rating": 3
+    }
+  ]
+}

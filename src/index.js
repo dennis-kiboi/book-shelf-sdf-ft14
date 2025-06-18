@@ -1,68 +1,5 @@
-// import {
-//   createIcons,
-//   Library,
-//   Plus,
-//   FileEdit as Edit3,
-//   Trash2,
-//   Star
-// } from "lucide";
-
-// // Initialize Lucide icons
-// createIcons({
-//   icons: {
-//     Library,
-//     Plus,
-//     Edit3,
-//     Trash2,
-//     Star
-//   }
-// });
-
 // Sample data
-let books = [
-  {
-    id: 1,
-    title: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
-    status: "Read",
-    rating: 5
-  },
-  {
-    id: 2,
-    title: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    status: "Read",
-    rating: 4
-  },
-  {
-    id: 3,
-    title: "1984",
-    author: "George Orwell",
-    status: "To Read",
-    rating: 0
-  },
-  {
-    id: 4,
-    title: "Pride and Prejudice",
-    author: "Jane Austen",
-    status: "Read",
-    rating: 5
-  },
-  {
-    id: 5,
-    title: "The Catcher in the Rye",
-    author: "J.D. Salinger",
-    status: "To Read",
-    rating: 0
-  },
-  {
-    id: 6,
-    title: "Lord of the Flies",
-    author: "William Golding",
-    status: "Read",
-    rating: 3
-  }
-];
+// let books= [];
 
 let nextId = 7;
 
@@ -122,7 +59,7 @@ function createBookCard(book) {
 }
 
 // Render books
-function renderBooks() {
+function renderBooks(books) {
   const booksGrid = document.getElementById("booksGrid");
   const emptyState = document.getElementById("emptyState");
   const bookCount = document.getElementById("bookCount");
@@ -214,5 +151,7 @@ window.editBook = editBook;
 // Event listeners
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("bookForm").addEventListener("submit", addBook);
-  renderBooks();
+  fetch("http://127.0.0.1:3000/books")
+    .then(res => res.json())
+    .then(data => renderBooks(data));
 });
