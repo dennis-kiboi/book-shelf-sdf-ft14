@@ -25,7 +25,7 @@ function createBookCard(book) {
     book.status === "Read" ? createStarRating(book.rating) : "";
 
   return `
-        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
+        <div id=book-${book.id} class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group">
             <div class="space-y-4">
                 <div>
                     <h3 class="font-semibold text-xl text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">
@@ -78,26 +78,45 @@ function renderBooks(books) {
 // Add book
 function addBook(event) {
   event.preventDefault();
-
   const formData = new FormData(event.target);
+
   const newBook = {
-    id: nextId++,
     title: formData.get("title"),
     author: formData.get("author"),
     status: formData.get("status"),
     rating: formData.get("rating") ? parseInt(formData.get("rating")) : 0
   };
 
-  books.push(newBook);
-  renderBooks();
-  event.target.reset();
+  fetch("http://127.0.0.1:3000/books", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newBook)
+  })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      const booksGrid = document.getElementById("booksGrid");
+      booksGrid.innerHTML += createBookCard(data);
+    });
 }
 
 // Delete book
 function deleteBook(id) {
   if (confirm("Are you sure you want to delete this book?")) {
-    books = books.filter(book => book.id !== id);
-    renderBooks();
+    fetch(`http://127.0.0.1:3000/books/${id}`, {
+      method: "DELETE"
+    })
+      .then(res => {
+        if (res.ok) {
+
+        }
+      })
+      
+
+    // books = books.filter(book => book.id !== id);
+    // renderBooks();
   }
 }
 
@@ -133,9 +152,9 @@ function editBook(id) {
 }
 
 // Make functions global so they can be called from HTML
-window.addBook = addBook;
+// window.addBook = addBook;
 window.deleteBook = deleteBook;
-window.editBook = editBook;
+// window.editBook = editBook;
 
 // Event listeners
 document.addEventListener("DOMContentLoaded", () => {

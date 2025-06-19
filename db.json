@@ -8,20 +8,6 @@
       "rating": 5
     },
     {
-      "id": 2,
-      "title": "To Kill a Mockingbird",
-      "author": "Harper Lee",
-      "status": "Read",
-      "rating": 4
-    },
-    {
-      "id": 3,
-      "title": "1984",
-      "author": "George Orwell",
-      "status": "To Read",
-      "rating": 0
-    },
-    {
       "id": 4,
       "title": "Pride and Prejudice",
       "author": "Jane Austen",
@@ -41,6 +27,55 @@
       "author": "William Golding",
       "status": "Read",
       "rating": 3
+    },
+    {
+      "title": "Shamba la wanyama",
+      "author": "asdasd",
+      "status": "To Read",
+      "rating": 0,
+      "id": 8
+    },
+    {
+      "title": "Diary of a Wimpy kid",
+      "author": "Fred Kainy",
+      "status": "To Read",
+      "rating": 0,
+      "id": 9
+    },
+    {
+      "title": "Romeo and Juliet",
+      "author": "William Shakespear",
+      "status": "To Read",
+      "rating": 0,
+      "id": 10
+    },
+    {
+      "title": "Merchant of Venice",
+      "author": "William Shakespear",
+      "status": "To Read",
+      "rating": 0,
+      "id": 11
+    },
+    {
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "status": "To Read",
+      "rating": 0,
+      "id": 12
+    },
+    {
+      "title": "Tumbo Lisiloshiba",
+      "author": "Ken Waliaura Walibora",
+      "status": "Read",
+      "rating": 3,
+      "id": 13
+    },
+    {
+      "title": "Think and Grow Rich",
+      "author": "Napoleon Hill",
+      "status": "To Read",
+      "rating": 0,
+      "id": 14
     }
   ]
 }
