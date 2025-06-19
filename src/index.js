@@ -45,11 +45,11 @@ function createBookCard(book) {
                 
                 <div class="flex items-center gap-2 pt-2">
                     <button onclick="editBook(${book.id})" class="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">
-                        <i data-lucide="edit-3" class="w-4 h-4"></i>
+                        <img src="./assets/img/pen-line.svg" height="16px" width="16px" alt="Delete icon">
                         Edit
                     </button>
                     <button onclick="deleteBook(${book.id})" class="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">
-                        <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        <img src="./assets/img/trash-2.svg" height="16px" width="16px" alt="Delete icon">
                         Delete
                     </button>
                 </div>
@@ -72,17 +72,6 @@ function renderBooks(books) {
     emptyState.style.display = "none";
     booksGrid.innerHTML = books.map(book => createBookCard(book)).join("");
     bookCount.textContent = `${books.length} books in your collection`;
-
-    // Re-initialize Lucide icons for new content
-    // createIcons({
-    //   icons: {
-    //     Library,
-    //     Plus,
-    //     Edit3,
-    //     Trash2,
-    //     Star
-    //   }
-    // });
   }
 }
 
