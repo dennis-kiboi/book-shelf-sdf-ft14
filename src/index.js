@@ -1,4 +1,4 @@
-const baseUrl = "http://127.0.0.1:3000/books"
+const baseUrl = "https://book-json-server-lac6.onrender.com/books"
 
 // Create star rating HTML
 function createStarRating(rating) {
