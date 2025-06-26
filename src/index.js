@@ -1,7 +1,4 @@
-// Sample data
-// let books= [];
-
-let nextId = 7;
+const baseUrl = "http://127.0.0.1:3000/books"
 
 // Create star rating HTML
 function createStarRating(rating) {
@@ -87,7 +84,7 @@ function addBook(event) {
     rating: formData.get("rating") ? parseInt(formData.get("rating")) : 0
   };
 
-  fetch("http://127.0.0.1:3000/books", {
+  fetch(baseUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -105,7 +102,7 @@ function addBook(event) {
 // Delete book
 function deleteBook(id) {
   if (confirm("Are you sure you want to delete this book?")) {
-    fetch(`http://127.0.0.1:3000/books/${id}`, {
+    fetch(`${baseUrl}/${id}`, {
       method: "DELETE"
     })
       .then(res => {
@@ -114,9 +111,6 @@ function deleteBook(id) {
         }
       })
       
-
-    // books = books.filter(book => book.id !== id);
-    // renderBooks();
   }
 }
 
@@ -159,7 +153,7 @@ window.deleteBook = deleteBook;
 // Event listeners
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("bookForm").addEventListener("submit", addBook);
-  fetch("http://127.0.0.1:3000/books")
+  fetch(baseUrl)
     .then(res => res.json())
     .then(data => renderBooks(data));
 });
